@@ -7,6 +7,7 @@ package ravenrobotics.cannonbot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
+import ravenrobotics.cannonbot.subsystems.PneumaticsSubsystem;
 
 /**
  * The VM is configured to automatically run this class, and to call the methods corresponding to
@@ -22,7 +23,7 @@ public class Robot extends TimedRobot
      */
     @Override
     public void robotInit() {
-        RobotContainer robotContainer = new RobotContainer();
+        new RobotContainer();
     }
 
 
@@ -33,15 +34,7 @@ public class Robot extends TimedRobot
 
 
     @Override
-    public void autonomousInit() {}
-
-
-    @Override
     public void autonomousPeriodic() {}
-
-
-    @Override
-    public void teleopInit() {}
 
 
     @Override
@@ -51,6 +44,7 @@ public class Robot extends TimedRobot
     @Override
     public void disabledInit() {
         CommandScheduler.getInstance().cancelAll();
+        PneumaticsSubsystem.getInstance().disarmPneumatics();
     }
 
 
@@ -59,15 +53,14 @@ public class Robot extends TimedRobot
 
 
     @Override
-    public void testInit() {}
+    public void testInit() {
+        CommandScheduler.getInstance().cancelAll();
+        PneumaticsSubsystem.getInstance().disarmPneumatics();
+    }
 
 
     @Override
     public void testPeriodic() {}
-
-
-    @Override
-    public void simulationInit() {}
 
 
     @Override

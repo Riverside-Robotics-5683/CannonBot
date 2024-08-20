@@ -15,4 +15,11 @@ public class Constants {
         public static final int BACK_LEFT = 1;
         public static final int BACK_RIGHT = 3;
     }
+
+    public static class PneumaticsConstants {
+        public static final int BARREL_ONE = 0;
+        public static final int BARREL_TWO = 1;
+        public static final int BARREL_THREE = 2;
+        public static final int BARREL_FOUR = 3;
+    }
 }
