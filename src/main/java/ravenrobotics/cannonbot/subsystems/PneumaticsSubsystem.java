@@ -41,10 +41,10 @@ public class PneumaticsSubsystem extends SubsystemBase {
 
     private PneumaticsSubsystem() {
         //Initialize the solenoids with the IDs from the PneumaticsConstants class.
-        barrelOne = new Solenoid(PneumaticsModuleType.CTREPCM, Constants.PneumaticsConstants.BARREL_ONE);
-        barrelTwo = new Solenoid(PneumaticsModuleType.CTREPCM, Constants.PneumaticsConstants.BARREL_TWO);
-        barrelThree = new Solenoid(PneumaticsModuleType.CTREPCM, Constants.PneumaticsConstants.BARREL_THREE);
-        barrelFour = new Solenoid(PneumaticsModuleType.CTREPCM, Constants.PneumaticsConstants.BARREL_FOUR);
+        barrelOne = new Solenoid(Constants.PneumaticsConstants.PCM, PneumaticsModuleType.CTREPCM, Constants.PneumaticsConstants.BARREL_ONE);
+        barrelTwo = new Solenoid(Constants.PneumaticsConstants.PCM, PneumaticsModuleType.CTREPCM, Constants.PneumaticsConstants.BARREL_TWO);
+        barrelThree = new Solenoid(Constants.PneumaticsConstants.PCM, PneumaticsModuleType.CTREPCM, Constants.PneumaticsConstants.BARREL_THREE);
+        barrelFour = new Solenoid(Constants.PneumaticsConstants.PCM, PneumaticsModuleType.CTREPCM, Constants.PneumaticsConstants.BARREL_FOUR);
 
         //Ensure the solenoids are closed so the system can continue pressurizing.
         barrelOne.set(false);
